@@ -117,4 +117,18 @@ for file in files:
                                 out = [line[i] for i in varIndex] # Select var as we want
                                 print out # write to excel file
 
+for root, dirs, files in os.walk("Y:\\aaaprojects\BMSO"):
+    path = root.split('/')
+    print (len(path) - 1) *'---' , os.path.basename(root)
+    Max_File = 0
+    Max_date = 0
+    for file in files:
+        if regex.match(file):
+            File_Time = os.path.getmtime(file)
+            if File_Time > Max_date;:
+                Max_date = File_Time
+                Max_File = file
+
+            print len(path)*'---', Max_File
+
 
